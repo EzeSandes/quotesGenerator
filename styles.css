@@ -54,7 +54,7 @@ h4{
 }
 
 .box{
-   padding: 3em;
+   padding: 2em;
    border: 3px solid var(--secondary-color);
 }
 
@@ -65,19 +65,19 @@ h4{
    gap: 0 2px;
 }
 
-.quote-icon{
+/* .quote-icon{
    position: relative;
    left: 2px;
+} */
    /* padding: 0.1em; */
    /* margin: 2px; */
-}
 
 #quote{
    grid-column: 2/3;
    grid-row: 2/3;
 }
 
-.autor{
+.author{
    color: var(--dark-color);
    text-align: end;
    margin-top: 10px;
