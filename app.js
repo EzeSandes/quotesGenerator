@@ -80,7 +80,7 @@ const generateQuoute = function () {
    authorBox.textContent = author;
 };
 
-generateQuoute();
+// generateQuoute();
 btnGenerate.addEventListener('click', generateQuoute);
 
 
