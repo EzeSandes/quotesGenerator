@@ -1,4 +1,13 @@
-'use strict'
+'use strict';
+
+const SECONDS = 10;
+
+//// Elements
+// const btnGenerate = document.getElementById('generate-button');
+const quoteBox = document.getElementById('quote');
+const authorBox = document.querySelector('.author-quote');
+const progressBar = document.querySelector('.progress-bar');
+
 
 const quotes = [
    {
@@ -67,10 +76,8 @@ const quotes = [
 ];
 
 
-//// Elements
-const btnGenerate = document.getElementById('generate-button');
-const quoteBox = document.getElementById('quote');
-const authorBox = document.querySelector('.author-quote');
+// Set animation duration for the Progress Bar.
+progressBar.style.animationDuration = `${SECONDS}s`;
 
 const generateQuoute = function () {
    const index = Math.trunc(Math.random() * quotes.length);
@@ -80,8 +87,11 @@ const generateQuoute = function () {
    authorBox.textContent = author;
 };
 
-// generateQuoute();
-btnGenerate.addEventListener('click', generateQuoute);
+
+
+generateQuoute();
+setInterval(generateQuoute, SECONDS * 1000);
+
 
 
 
