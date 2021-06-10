@@ -57,6 +57,8 @@ h4{
    padding: 2em;
    background-color: var(--dark-color);
    border-radius: 50px;
+
+   box-shadow:  0 4px 30px 10px var(--dark-color);
 }
 
 .progress-bar {
