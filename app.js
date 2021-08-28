@@ -102,7 +102,7 @@ const generateQuoute = async function () {
 
 
 generateQuoute();
-// setInterval(generateQuoute, SECONDS * 1000);
+setInterval(generateQuoute, SECONDS * 1000);
 
 
 
