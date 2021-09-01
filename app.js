@@ -78,8 +78,6 @@ const getQuote = async function () {
     if (!res.ok) throw new Error("Error getting quotes.");
 
     return await res.json();
-
-    return await res.json();
   } catch (err) {
     quoteBox.textContent = err.message;
     authorBox.textContent = "XXXXX";
@@ -100,6 +98,6 @@ window.onload = function () {
   generateQuoute();
 };
 
-// OR i cal the function in the begining.
+// OR i call the function in the begining.
 // generateQuoute();
 setInterval(generateQuoute, SECONDS * 1000);
