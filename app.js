@@ -2,10 +2,9 @@ const SECONDS = 10;
 
 //// Elements
 // const btnGenerate = document.getElementById('generate-button');
-const quoteBox = document.getElementById('quote');
-const authorBox = document.querySelector('.author-quote');
-const progressBar = document.querySelector('.progress-bar');
-
+const quoteBox = document.getElementById("quote");
+const authorBox = document.querySelector(".author-quote");
+const progressBar = document.querySelector(".progress-bar");
 
 // const quotes = [
 //    {
@@ -73,37 +72,32 @@ const progressBar = document.querySelector('.progress-bar');
 //    },
 // ];
 
-const getQuote = async function(){
-   
-   try{
-      const res = await fetch('http://staging.quotable.io/random');
-      if(!res.ok)
-         throw new Error('Error getting quotes.');
-      
-      return await res.json();
+const getQuote = async function () {
+  try {
+    const res = await fetch("http://staging.quotable.io/random");
+    if (!res.ok) throw new Error("Error getting quotes.");
 
-   }catch(err){
-      quoteBox.textContent = err.message;
-      authorBox.textContent = 'XXXXX';
-   }
-}
+    return await res.json();
+  } catch (err) {
+    quoteBox.textContent = err.message;
+    authorBox.textContent = "XXXXX";
+  }
+};
 
 // Set animation duration for the Progress Bar.
 progressBar.style.animationDuration = `${SECONDS}s`;
 
 const generateQuoute = async function () {
+  const { content: quote, author } = await getQuote();
 
-   const {content : quote, author} = await getQuote();
-
-   quoteBox.textContent = quote;
-   authorBox.textContent = author;
+  quoteBox.textContent = quote;
+  authorBox.textContent = author;
 };
 
+window.onload = function () {
+  generateQuoute();
+};
 
-
-generateQuoute();
+// OR i cal the function in the begining.
+// generateQuoute();
 setInterval(generateQuoute, SECONDS * 1000);
-
-
-
-
