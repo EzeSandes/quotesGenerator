@@ -74,8 +74,10 @@ const progressBar = document.querySelector(".progress-bar");
 
 const getQuote = async function () {
   try {
-    const res = await fetch("http://staging.quotable.io/random");
+    const res = await fetch("https://api.quotable.io/random");
     if (!res.ok) throw new Error("Error getting quotes.");
+
+    return await res.json();
 
     return await res.json();
   } catch (err) {
